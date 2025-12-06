@@ -9,8 +9,13 @@ import { LanguageProvider } from '@/components/LanguageProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Moxelle - Modern Web Solutions',
-  description: 'Creating beautiful and fast web experiences',
+  title: 'PT MOXELE INDO GROUP - Multi-Industry Technology Solution Architect',
+  description: 'PT MOXELE INDO GROUP adalah penyedia solusi teknologi yang didedikasikan untuk melayani beragam industri, dengan keahlian inti dalam sistem Jaringan Sinyal dan ISP (Internet Service Protocol).',
+  icons: {
+    icon: '/logo-mhg.png',
+    shortcut: '/logo-mhg.png',
+    apple: '/logo-mhg.png',
+  },
 }
 
 export default function RootLayout({
