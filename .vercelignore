@@ -3,7 +3,6 @@ node_modules
 .env*.local
 .DS_Store
 *.log
-next.config.unaux.js
-next.config.backup.js
 DEPLOYMENT_*.md
+VERCEL_TROUBLESHOOTING.md
 
