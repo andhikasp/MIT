@@ -14,12 +14,17 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Validasi environment variables
+    // Validasi environment variables - jika tidak ada, return success (email disabled)
     if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
-      console.error('Missing SMTP environment variables')
+      console.warn('Email service is not configured. Skipping email send.')
+      // Return success untuk tidak mengganggu user experience
+      // Email akan diaktifkan setelah environment variables di-set
       return NextResponse.json(
-        { error: 'Email service is not configured' },
-        { status: 500 }
+        { 
+          message: 'Message received (email service not configured)',
+          warning: 'Email service is disabled. Please configure SMTP environment variables.'
+        },
+        { status: 200 }
       )
     }
 
