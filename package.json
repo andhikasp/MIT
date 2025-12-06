@@ -5,8 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:unaux": "cp next.config.unaux.js next.config.js && next build",
-    "build:normal": "cp next.config.backup.js next.config.js 2>/dev/null || echo 'Using default config' && next build",
     "start": "next start",
     "lint": "next lint"
   },
