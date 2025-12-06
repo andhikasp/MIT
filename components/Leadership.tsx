@@ -91,7 +91,7 @@ export default function Leadership() {
                 {leader.title}
               </p>
               <p className="text-sm text-gray-300 italic line-clamp-3">
-                "{leader.messagePreview}"
+                &ldquo;{leader.messagePreview}&rdquo;
               </p>
               <button
                 onClick={(e) => {

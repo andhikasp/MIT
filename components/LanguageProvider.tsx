@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { createContext, useContext, useEffect, useMemo, useState, useCallback } from 'react'
 import { Locale, translations } from '@/lib/translations'
 
 type LanguageContextValue = {
@@ -29,12 +29,12 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   }, [])
 
-  const setLocale = (loc: Locale) => {
+  const setLocale = useCallback((loc: Locale) => {
     setLocaleState(loc)
     if (typeof window !== 'undefined') {
       localStorage.setItem(STORAGE_KEY, loc)
     }
-  }
+  }, [])
 
   const t = useMemo(() => {
     return (key: string) => translations[locale][key] ?? translations.id[key] ?? key
