@@ -24,4 +24,28 @@ a {
   }
 }
 
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Remove white background from logo */
+.logo-no-bg {
+  mix-blend-mode: screen;
+  filter: brightness(1.2) contrast(1.1);
+}
+
+.logo-no-bg-dark {
+  mix-blend-mode: lighten;
+  filter: brightness(1.1) contrast(1.2);
+}
+
 

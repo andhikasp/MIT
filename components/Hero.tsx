@@ -60,20 +60,41 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary-500/30 via-indigo-500/20 to-transparent blur-3xl" />
-            <div className="relative rounded-3xl border border-white/10 bg-black/50 backdrop-blur-xl p-8 shadow-2xl shadow-primary-500/20 flex items-center justify-center">
-              <div className="w-full max-w-md">
-                <div className="relative w-full aspect-square flex items-center justify-center">
-                  <Image
-                    src="/logo-mhg.png"
-                    alt="MHG PT MOXELE INDO GROUP Logo"
-                    width={400}
-                    height={400}
-                    className="w-full h-full object-contain"
-                    unoptimized
-                    priority
-                  />
+          <div className="relative group">
+            {/* Multi-layer glow effects for depth */}
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary-500/50 via-indigo-500/40 to-purple-500/30 blur-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-700" />
+            <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-primary-400/30 via-transparent to-indigo-400/30 blur-2xl opacity-60" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-primary-600/10 via-transparent to-indigo-600/10" />
+            
+            {/* Main logo container with premium styling */}
+            <div className="relative rounded-3xl border border-white/30 bg-gradient-to-br from-black/70 via-[#0b1021]/90 to-black/70 backdrop-blur-3xl p-12 shadow-2xl shadow-primary-500/40 flex items-center justify-center overflow-hidden group-hover:border-primary-400/50 group-hover:shadow-primary-500/50 transition-all duration-700">
+              {/* Inner glow layers */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/8 via-transparent to-indigo-500/8 rounded-3xl" />
+              <div className="absolute inset-[1px] rounded-3xl bg-gradient-to-t from-white/5 via-transparent to-transparent" />
+              
+              {/* Animated shimmer effect on hover */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity duration-1000" />
+              
+              {/* Logo with enhanced visual effects */}
+              <div className="w-full max-w-md relative z-10">
+                <div className="relative w-full aspect-square flex items-center justify-center p-4">
+                  {/* Outer glow ring */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500/20 via-indigo-500/20 to-primary-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  
+                  <div className="relative z-10 w-full h-full logo-no-bg">
+                    <Image
+                      src="/logo-mhg.png"
+                      alt="PT MOXELE INDO GROUP Logo"
+                      width={480}
+                      height={480}
+                      className="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(59,130,246,0.3)] filter brightness-[1.15] contrast-110 saturate-110 group-hover:scale-[1.08] group-hover:drop-shadow-[0_0_40px_rgba(59,130,246,0.5)] transition-all duration-700 ease-out"
+                      unoptimized
+                      priority
+                    />
+                  </div>
+                  
+                  {/* Subtle inner shadow for depth */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 rounded-full opacity-50" />
                 </div>
               </div>
             </div>

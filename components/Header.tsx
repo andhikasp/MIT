@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useLanguage } from './LanguageProvider'
 
@@ -16,8 +17,23 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-white">
-              Moxelle Indo Group
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 p-1.5 border border-white/10 group-hover:border-primary-400/50 group-hover:bg-white/10 transition-all duration-300">
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-primary-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative z-10 w-full h-full logo-no-bg">
+                  <Image
+                    src="/logo-mhg.png"
+                    alt="PT MOXELE INDO GROUP"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-contain filter brightness-110 drop-shadow-md group-hover:scale-110 group-hover:drop-shadow-lg transition-all duration-300"
+                    unoptimized
+                  />
+                </div>
+              </div>
+              <span className="text-xl font-bold text-white group-hover:text-primary-300 transition-colors duration-300">
+                Moxelle Indo Group
+              </span>
             </Link>
           </div>
 
